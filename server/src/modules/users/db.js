@@ -2,14 +2,27 @@ import { prisma } from '../../services/Prisma.js'
 
 const { user } = prisma
 
-export const getAllUsersDB = async () => {
+export const getAllUsersDB = async (query) => {
+  console.log(query)
   try {
-    const users = await user.findMany()
+    const users = await user.findMany({
+      take: +query.limit || undefined,
+      skip: +query.offset || undefined,
+      include: {
+        company: true,
+        role: true,
+      },
+    })
+
+    const count = await user.count()
+
     return {
       data: users,
+      dataCount: count,
       error: null,
     }
   } catch (error) {
+    console.log(error.message)
     return {
       data: null,
       error: error,

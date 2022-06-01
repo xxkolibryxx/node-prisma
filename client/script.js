@@ -104,6 +104,7 @@ const drawAllUsers = (data) => {
 
         ['name', 'email', 'company', 'role'].forEach(f => {
             const field = document.createElement('div');
+            console.log(user);
             field.append(user[f].name || user[f]);
             row.append(field);
         })

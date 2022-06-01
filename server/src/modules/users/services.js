@@ -3,7 +3,7 @@ import { responseDataCreator } from '../../helpers/common.js'
 
 export const getAllUsers = async (req, res, next) => {
   try {
-    const users = await getAllUsersDB()
+    const users = await getAllUsersDB(req.query)
     res.json(responseDataCreator(users))
   } catch (error) {
     next(error)
