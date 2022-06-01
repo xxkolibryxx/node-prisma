@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.row-wrapper{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row-wrapper input,.row-wrapper select{
+    width: 25%;
+    padding: 5px;
+    margin: 10px 0;
+}
+.btn{
+    background-color: rgb(3, 166, 85);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(3, 166, 85);
+    margin: 10px 0;
+    cursor: pointer;
+}
